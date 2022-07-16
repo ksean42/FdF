@@ -35,7 +35,7 @@ int		ft_key_hook(int key, t_fdf *data)
 		data->shiftx -= 10;
 	if (key == 124)
 		data->shiftx += 10;
-	data->angle += 0.0523599;
+//	data->angle += 0.0523599;
 	mlx_clear_window(data->mlx, data->win);
 	draw(data);
 	return (0);

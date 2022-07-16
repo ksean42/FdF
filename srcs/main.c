@@ -12,14 +12,6 @@
 
 #include "fdf.h"
 
-int ft_hook(t_fdf *data)
-{
-	data->angle += 0.0523599;
-	mlx_clear_window(data->mlx, data->win);
-	draw(data);
-	return 0;
-}
-
 int		main(int ac, char **av)
 {
 	t_fdf	*map;
@@ -37,7 +29,6 @@ int		main(int ac, char **av)
 	mlx_hook(map->win, 2, 1L << 0, ft_key_hook, map);
 	mlx_hook(map->win, 17, 1L << 0, ft_close, map);
 	mlx_mouse_hook(map->win, ft_mouse_hook, map);
-	mlx_loop_hook(map->mlx, ft_hook, map)  ;
 	mlx_loop(map->mlx);
 	map_free(map);
 	return (0);
